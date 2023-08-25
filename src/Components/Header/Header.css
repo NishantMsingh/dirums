@@ -1,0 +1,54 @@
+.bold{
+    font-weight: 500;
+}
+.header{
+    position: sticky;
+    top: 0;
+    background-color: #424242;
+}
+.com{
+    position: relative;
+    right:-120px;
+    bottom: 20px;
+}
+.brand{
+    color: #e9da85;
+    user-select: none;
+    position: relative;
+}
+.brand::after{
+    content: "";
+    width: 2px;
+    height:55%;
+    position: absolute;
+    right: -20px;
+    top: 6px;
+    background-color: rgba(68, 67, 67, 0.295);
+}
+.webdevelopment-text{
+    font-size: 38px;
+    user-select: none;
+}
+.Hamburger{
+    display: none;
+   }
+@media (max-width:768px)
+{
+    .Hamburger{
+        cursor: pointer;
+        display: block;
+        font-size: 2rem;
+        position: relative;
+        top: -18px;
+        padding: 5px;
+       }
+
+       .com{
+        position: relative;
+        right:-73px;
+        bottom: 20px;
+    }
+    .webdevelopment-text{
+        font-size: 10px;
+    }
+}

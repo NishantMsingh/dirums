@@ -1,0 +1,145 @@
+.createTask{
+    background-color: #3ad1f7;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 25px;
+    text-align: center; 
+    display: inline-block; 
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-flex;;
+    align-items: center; 
+    position: relative;
+}
+.navToggle{
+    display: none;
+  }
+  .cross{
+      display: none;
+  }
+  
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.createTask::after {
+    content: '';
+    width: 2px;
+    height: 80%;
+    background-color: rgba(92, 91, 91, 0.205);
+    position: absolute;
+    left: 110%;
+    top: 18px;
+    transform: translateY(-50%);
+}
+.searchQuery{
+    background-color: #ffffff;
+    color: white;
+    margin-left: 2.4rem;
+    padding: 0;
+    border-radius: 5px;
+    text-align: center; 
+    display: inline-block; 
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+.searchQuery input{
+    outline: none;
+    border: none;
+    font-style: italic;
+    padding: 0 0px 0 10px;
+}
+.searchQuery button {
+    border: none;
+    background-color: #3ad1f7;
+    padding: 5px 15px;
+}
+.submit{
+    border-radius: 4px;
+    background-color: #3ad1f7;
+    padding: 6px 12px;
+    border:none;
+}
+.dev{
+    position: absolute;
+    right: -10px;
+    width: 52px;
+    height: 52px;
+    border-radius: 25px;
+}
+.profile{
+ position: relative;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 3rem;
+border-radius: 25px; 
+}
+
+.lists{
+    flex-direction: row;
+}
+@media (max-width:992px) {
+    .profile{
+      margin-top: 1rem;
+      padding-top: 5px;
+      padding-bottom: 5px;
+       }
+       .lists{
+       justify-content: space-between;
+       }
+       .nav{
+    
+       flex-direction: column;
+        padding: 20px;
+    }
+    .createTask::after {
+        
+        left: 180%;
+        top: 6px;
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width:768px) {
+
+    .nav{
+         position:fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         overflow: hidden;
+        
+        background-color: rgb(75, 74, 74);
+         z-index: 1000;
+        flex-direction: column;
+         padding: 20px;
+     }
+    
+   .lists{
+    flex-direction: column;
+   }
+   .searchQuery{
+    margin:0;
+}
+
+.createTask::after {
+    content: '';
+    background-color: rgba(92, 91, 91, 0);
+}
+.cross{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+}
+}
