@@ -46,48 +46,34 @@ const NavigationBar = () => {
     event.preventDefault();
     setShow(false);
   
-    const task = {
+    let task = {
+    
       date: date.current.value,
       status,
       description
     };
   
-    const dbPromise = initDB();
-  
-    dbPromise.onsuccess = (event) => {
-      const db = event.target.result;
-      const transaction = db.transaction("tasks", "readwrite");
-      const store = transaction.objectStore("tasks");
-  
-      const addRequest = store.add(task);
-  
-      addRequest.onsuccess = () => {
-        console.log("Task added to IndexedDB:", task);
-      };
-  
-      transaction.oncomplete = () => {
-        db.close();
-        date.current.value = "";
-        setStatus("todo");
-        setDescription("");
-        alert("Task added successfully");
-      };
-    };
-  };
-  
 
-  function initDB() {
-    const indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
-    const request = indexedDB.open("TaskDatabase", 1);
-  
-    request.onupgradeneeded = (event) => {
-      const db = event.target.result;
-      db.createObjectStore("tasks", { keyPath: "id", autoIncrement: true });
-    };
-  
-    return request;
-  }
-  
+    if (localStorage.getItem("tasks")) {
+      task={...task,id:""+JSON.parse(localStorage.getItem("tasks")).length}
+      let current = [task, ...JSON.parse(localStorage.getItem("tasks"))];
+      localStorage.setItem("tasks", JSON.stringify(current)); 
+      alert("Task added successfully");
+      date.current.value="";
+      setStatus("todo");
+      setDescription("");
+    } else {
+      let current = [];
+      task={...task,id:"1"}
+      current.push(task);
+      localStorage.setItem("tasks", JSON.stringify(current)); 
+      alert("Task added successfully");
+      date.current.value="";
+      setStatus("todo");
+      setDescription("");
+    }
+  };
+    
   return (
     <>
       <nav className='contaner-fluid bg-light  m-0'>

@@ -5,18 +5,18 @@ import CartContext from '../../Context/Cart-context';
 import { useContext } from 'react';
 
 
-const Main = (props) => {
+const Main = () => {
    const ctx = useContext(CartContext);
   console.log(ctx.all);
    return (
      <div className='container-fluid min-height pt-5'>
        <div className="container">
-         <div class="row justify-content-center align-items-center g-2">
+         <div class="row justify-content-center align-items-start max-high g-2">
            <div class="col-lg-3 col-sm-10 col-md-5 shadow border-0 ms-1 rounded ps-2">
              <h5 className='text-primary  pt-2'> Tasks to do </h5>
              <hr/>
-             {props.tasks.length > 0 ? (
-                props.tasks.map(val => (
+             {ctx.todos.length > 0 ? (
+                ctx.todos.map(val => (
                  <TodoCard key={val.id} task={val} />
                ))
              ) : (
@@ -26,8 +26,8 @@ const Main = (props) => {
            <div class="col-lg-3 col-sm-10 col-md-5 shadow border-0 ms-1 rounded ps-2">
              <h5 className='text-secondary  pt-2'> In progress </h5>
              <hr/>
-             {props.tasks.length > 0 ? (
-                props.tasks.map(val => (
+             {ctx.pending.length > 0 ? (
+                ctx.pending.map(val => (
                  <TodoCard key={val.id} task={val} />
                ))
              ) : (
@@ -37,8 +37,8 @@ const Main = (props) => {
            <div class="col-lg-3 col-sm-10 col-md-5 shadow border-0 ms-1 rounded ps-2">
              <h5 className='text-success pt-2'> Tasks done </h5>
              <hr/> 
-             {props.tasks.length > 0 ? (
-               props.tasks.map(val => (
+             {ctx.completed.length > 0 ? (
+               ctx.completed.map(val => (
                  <TodoCard key={val.id} task={val} />
                ))
              ) : (
