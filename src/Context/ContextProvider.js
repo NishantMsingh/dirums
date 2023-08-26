@@ -54,16 +54,16 @@ const CartProvider = (props) => {
     }
 
     else if (draggedTask.status === "pending") {
-      console.log("1");
+    
       let temp = pend.filter((val) => {
         return val.id !== draggedTask.id;
       });
-      console.log("2");
+    
       setPending(temp);
       console.log(pend);
   
       if (destinationColumn === "completed") {
-        console.log("3");
+       
         setCompletedd((prev) => [...prev, updatedDraggedTask]);
       }
     }
@@ -82,12 +82,39 @@ const CartProvider = (props) => {
 
   };
 
+const TaskUpdateHandler=()=>{
+ 
+}
+
+const TaskDeleteHandler=(task)=>{
+  if(task.status==="todo")
+  {
+    let x=todo.filter((val)=> val.id !==task.id);
+    setTodos(x);
+  }
+  if(task.status==="pending")
+  {
+    let x=pend.filter((val)=> val.id !==task.id);
+    setPending(x);
+  }
+  if(task.status==="completed")
+  {
+    let x=completed.filter((val)=> val.id !==task.id);
+    setCompletedd(x);
+  }
+  
+ 
+}
+
+
   const contextValue = {
     menuToggle: MenuHandler,
     all: alltasks,
     todos: todo,
     pending: pend,
     updateDraged: DraggedTaskHandler,
+    updateTask: TaskUpdateHandler,
+    deleteTask: TaskDeleteHandler,
     completed: completed,
     menu: value,
     addTask: TaskHandler,
