@@ -29,13 +29,13 @@ const Main = () => {
   };
   return (
     <div className='container-fluid min-height pt-5'>
-      <div className="container">
+      <div className="container-fluid">
         <DragDropContext onDragEnd={onDragEnd}>
           <div class="row justify-content-center align-items-start max-high g-2">
             {['todos', 'pending', 'completed'].map((column) => (
               <Droppable droppableId={column} key={column}>
                 {(provided) => (
-                  <div class={`col-lg-3 col-sm-10 col-md-5 shadow border-0 ms-2 rounded ps-2 ${column}`}>
+                  <div class={`col-lg-3 col-sm-10 col-md-5 shadow border-0 ms-2 min-high rounded ps-2 ${column}`}>
                     <h5 className={`text-${column === 'todos' ? 'primary' : column === 'pending' ? 'secondary' : 'success'} pt-2`}>
                       {column === 'todos' ? 'Tasks to do' : column === 'pending' ? 'In progress' : 'Tasks done'}
                     </h5>

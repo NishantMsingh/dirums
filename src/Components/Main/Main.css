@@ -1,9 +1,6 @@
 .min-height{
     min-height: 100vh;
 }
-
-.max-high{
-    max-height: 100vh;
-    max-height: 100vh;
-  
+.min-high{
+    min-height: 50vh;
 }
