@@ -170,11 +170,11 @@ const NavigationBar = () => {
           id='progress'
           className='me-1'
           name='status'
-          value='progress'
-          checked={status === 'progress'}
+          value='pending'
+          checked={status === 'pending'}
           onChange={handleStatusChange}
         />
-        <label htmlFor='progress' className='me-3'>
+        <label htmlFor='pending' className='me-3'>
           Progress
         </label>
 

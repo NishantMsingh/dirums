@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CartContext from './Cart-context';
 
 const CartProvider = (props) => {
@@ -14,40 +14,81 @@ const CartProvider = (props) => {
 
 
 
-    const TaskHandler = (data) => {
-      const taskExists = alltasks.some(task => task.id === data.id);
-    
-      if (!taskExists) {
-       
-    
-        if (data.status === "todo") {
-          console.log("Todo");
-          setTodos((prev) => [...prev, data]);
-          
-        } else if (data.status === "progress") {
-          console.log("progress");
-          setPending((prev) => [...prev, data]);
-         
-        } else {
-          console.log("Completed");
-          setCompletedd((prev) => [...prev, data]);
-        }
+  const TaskHandler = (data) => {
+    const taskExists = alltasks.some(task => task.id === data.id);
+
+    if (!taskExists) {
+
+
+      if (data.status === "todo") {
+        setTodos((prev) => [...prev, data]);
+
+      } else if (data.status === "pending") {
+        setPending((prev) => [...prev, data]);
+
+      } else if (data.status === "completed") {
+        setCompletedd((prev) => [...prev, data]);
       }
-    };
-useEffect(()=>{
-console.log(todo.length);
-console.log(pend.length);
-console.log(completed.length);
-},[todo,pend,completed])
+    }
+  };
 
 
+  const DraggedTaskHandler = (draggedTask, destinationColumn, updatedDraggedTask) => {
+
+
+
+    if (draggedTask.status === "todo") {
+      let temp = todo.filter((val) => {
+        return val.id !== draggedTask.id;
+      });
+      setTodos(temp);
+      if (destinationColumn === "pending") {
+
+        setPending((prev) => [...prev, updatedDraggedTask]);
+
+      } else {
+        setCompletedd((prev) => [...prev, updatedDraggedTask]);
+
+
+      }
+    }
+
+    else if (draggedTask.status === "pending") {
+      console.log("1");
+      let temp = pend.filter((val) => {
+        return val.id !== draggedTask.id;
+      });
+      console.log("2");
+      setPending(temp);
+      console.log(pend);
+  
+      if (destinationColumn === "completed") {
+        console.log("3");
+        setCompletedd((prev) => [...prev, updatedDraggedTask]);
+      }
+    }
+
+    const storedData = JSON.parse(localStorage.getItem("tasks"));
+
+    if (storedData) {
+      const taskIndex = storedData.findIndex((task) => task.id === draggedTask.id);
+      if (taskIndex !== -1) {
+        storedData.splice(taskIndex, 1, updatedDraggedTask);
+        localStorage.setItem("tasks", JSON.stringify(storedData));
+      }
+    }
+
+
+
+  };
 
   const contextValue = {
     menuToggle: MenuHandler,
     all: alltasks,
-    todos:todo,
-    pending:pend,
-    completed:completed,
+    todos: todo,
+    pending: pend,
+    updateDraged: DraggedTaskHandler,
+    completed: completed,
     menu: value,
     addTask: TaskHandler,
   };
