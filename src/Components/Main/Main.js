@@ -28,7 +28,7 @@ const Main = () => {
 
       // Update the state with the new order
       // ctx.updateTasks(sourceColumn, tasks);
-      console.log(sourceColumn, tasks);
+      console.log("Task", tasks);
     } else {
       // If the item was moved to a different column
       const sourceTasks = [...ctx[sourceColumn]];
@@ -40,7 +40,7 @@ const Main = () => {
       // Update the state with the new order in both columns
       // ctx.updateTasks(sourceColumn, sourceTasks);
       // ctx.updateTasks(destinationColumn, destinationTasks);
-      console.log(sourceColumn, sourceTasks);
+      console.log("Source Task",sourceTasks);
     }
   };
 
@@ -67,7 +67,7 @@ const Main = () => {
                                 {...provided.draggableProps}
                                 {...provided.dragHandleProps}
                               >
-                                <TodoCard task={val} />
+                                <TodoCard task={val}  css={column}/>
                               </div>
                             )}
                           </Draggable>
