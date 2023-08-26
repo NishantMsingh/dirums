@@ -13,18 +13,18 @@ function App() {
 
  const [flg,setFlg]=useState(true);
 
-  useEffect(() => {
-    if(flg)
-    {
-      setFlg(false);
-      const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-    if (storedTasks) {
-      storedTasks.forEach((task) => {
-        ctx.addTask(task);
-      });
-    }
-    }
-  }, []);
+ useEffect(() => {
+  if(flg)
+  {
+    setFlg(false);
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+  if (storedTasks) {
+    storedTasks.map((task) => {
+      ctx.addTask(task);
+    });
+  }
+  }
+}, []);
   
   return (
     <>

@@ -18,18 +18,27 @@ const CartProvider = (props) => {
       const taskExists = alltasks.some(task => task.id === data.id);
     
       if (!taskExists) {
-        setAllTasks((prev) => [...prev, data]);
+       
     
         if (data.status === "todo") {
+          console.log("Todo");
           setTodos((prev) => [...prev, data]);
-        } else if (data.status === "pending") {
+          
+        } else if (data.status === "progress") {
+          console.log("progress");
           setPending((prev) => [...prev, data]);
+         
         } else {
+          console.log("Completed");
           setCompletedd((prev) => [...prev, data]);
         }
       }
     };
-
+useEffect(()=>{
+console.log(todo.length);
+console.log(pend.length);
+console.log(completed.length);
+},[todo,pend,completed])
 
 
 

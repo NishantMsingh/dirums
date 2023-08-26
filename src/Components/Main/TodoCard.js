@@ -4,11 +4,13 @@ import './TodoCard.css';
 const TodoCard = (props) => {
   console.log(props.task);
   return (
-    <div className="todo-card">
-      <div className="todo-date">{props.task.date}</div>
-      <div className="todo-description">{props.task.description}</div>
+    <div className={`${props.css} todo-card`}>
+      <h6 className="todo-description">{props.task.description}</h6>
+      <span className="todo-date"> <span className='fs-6 text-dark bold'> {props.dateText}</span>  {props.task.date}</span>
+      
     </div>
   );
 };
 
 export default TodoCard;
+ 

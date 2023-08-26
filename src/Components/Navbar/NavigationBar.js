@@ -42,35 +42,56 @@ const NavigationBar = () => {
     setStatus(event.target.value);
   };
 
+  const generateUniqueId = () => {
+    return Math.random().toString(36).substr(2, 9); 
+  };
+
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     setShow(false);
   
-    let task = {
-    
+    const task = {
+      id: generateUniqueId(), 
       date: date.current.value,
       status,
-      description
+      description,
     };
   
 
     if (localStorage.getItem("tasks")) {
-      task={...task,id:""+JSON.parse(localStorage.getItem("tasks")).length}
+
+      const task = {
+        id: generateUniqueId(), 
+        date: date.current.value,
+        status,
+        description,
+      };
       let current = [task, ...JSON.parse(localStorage.getItem("tasks"))];
-      localStorage.setItem("tasks", JSON.stringify(current)); 
+    
+      ctx.addTask(task);
       alert("Task added successfully");
       date.current.value="";
       setStatus("todo");
       setDescription("");
-    } else {
+      localStorage.setItem("tasks", JSON.stringify(current)); 
+    }
+     else {
       let current = [];
-      task={...task,id:"1"}
+      const task = {
+        id: generateUniqueId(), 
+        date: date.current.value,
+        status,
+        description,
+      };
       current.push(task);
-      localStorage.setItem("tasks", JSON.stringify(current)); 
+     
       alert("Task added successfully");
       date.current.value="";
       setStatus("todo");
       setDescription("");
+      ctx.addTask(task);
+      localStorage.setItem("tasks", JSON.stringify(current)); 
     }
   };
     

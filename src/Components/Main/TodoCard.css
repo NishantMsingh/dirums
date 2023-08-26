@@ -9,7 +9,16 @@
     font-size: 0.9rem;
     color: #666;
   }
-  
+  .todo{
+    background-color: rgba(255, 0, 0, 0.205);
+  } 
+  .fogress{
+    background-color: rgba(199, 188, 35, 0.205);
+  }
+ 
+  .completed{
+    background-color: rgba(17, 58, 4, 0.137);
+  }
   .todo-description {
     margin-top: 0.5rem;
     font-size: 1rem;
