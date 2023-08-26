@@ -33,9 +33,35 @@ const TodoCard = (props) => {
 
   }
 
- const taskUpdatehandler=()=>{
+  const taskUpdateHandler = () => {
+    
+    const updatedTask = {
+      ...props.task,
+ 
+      description,
+      status,
+      date
+  
+    };
+  
+   
+    const storedData = JSON.parse(localStorage.getItem("tasks"));
+    if (storedData) {
+      const taskIndex = storedData.findIndex((task) => task.id === props.task.id);
+      if (taskIndex !== -1) {
+        storedData.splice(taskIndex, 1, updatedTask);
+        localStorage.setItem("tasks", JSON.stringify(storedData));
+      }
+    }
+  
 
- }
+    ctx.updateTask(updatedTask,props.task);
+   
+  
+    handleClose();
+    alert("Task Updated");
+  };
+  
   const taskDeletehandler=()=>
   {   
     const storedData = JSON.parse(localStorage.getItem("tasks"));
@@ -144,7 +170,7 @@ const TodoCard = (props) => {
 
         </Modal.Body>
         <Modal.Footer className='ms-4 me-4'>
-        <Button onClick={taskUpdatehandler}  variant="contained" className='me-2'>Update Task</Button>
+        <Button onClick={taskUpdateHandler}  variant="contained" className='me-2'>Update Task</Button>
         <Button onClick={taskDeletehandler}  variant="contained">Delete Task</Button>
         </Modal.Footer>
       </Modal>

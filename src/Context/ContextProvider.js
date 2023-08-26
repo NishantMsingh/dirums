@@ -82,8 +82,35 @@ const CartProvider = (props) => {
 
   };
 
-const TaskUpdateHandler=()=>{
- 
+const TaskUpdateHandler=(updatedTask,previousState)=>{
+  if (updatedTask.status === 'todo') {
+
+    setTodos((prev) => [...prev, updatedTask]);
+
+  } else if (updatedTask.status === 'pending') {
+
+    setPending((prev) => [...prev, updatedTask]);
+
+  } else if (updatedTask.status === 'completed') {
+
+    setCompletedd((prev) => [...prev, updatedTask]);
+  }
+
+  if(previousState.status==="todo")
+  {
+    let x=todo.filter((val)=> val.id !==previousState.id);
+    setTodos(x);
+  }
+  else if(previousState.status==="pending")
+  {
+    let x=pend.filter((val)=> val.id !==previousState.id);
+    setPending(x);
+  }
+  else if(previousState.status==="completed")
+  {
+    let x=completed.filter((val)=> val.id !==previousState.id);
+    setCompletedd(x);
+  }
 }
 
 const TaskDeleteHandler=(task)=>{
