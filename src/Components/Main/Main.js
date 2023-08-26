@@ -4,6 +4,7 @@ import TodoCard from './TodoCard';
 import CartContext from '../../Context/Cart-context';
 import { useContext } from 'react';
 
+
 const Main = (props) => {
    const ctx = useContext(CartContext);
   console.log(ctx.all);

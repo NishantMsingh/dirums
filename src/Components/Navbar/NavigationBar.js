@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import dev from "../../Assets/IMG_8191.jpg"
 import CartContext from '../../Context/Cart-context';
 import Modal from 'react-bootstrap/Modal';
-
+import Button from '@mui/material/Button';
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
   const date =useRef();
@@ -197,8 +197,7 @@ const NavigationBar = () => {
 
         </Modal.Body>
         <Modal.Footer className='ms-4 me-4'>
-        
-          <button type='submit' className={classes.submit}  onClick={handleSubmit}>Create</button>
+        <Button onClick={handleSubmit}  variant="contained">Create Task</Button>
         </Modal.Footer>
       </Modal>
     </>

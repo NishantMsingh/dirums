@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import './App.css';
+import Button from '@mui/material/Button';
 import NavigationBar from './Components/Navbar/NavigationBar';
 import Header from './Components/Header/Header';
 import { initDB } from './utils/indexedDB';
@@ -42,6 +43,7 @@ function App() {
  console.log(tasks);
   return (
     <>
+ 
       <NavigationBar />
       <Header  />
       <Main tasks={tasks} />
