@@ -13,12 +13,12 @@ const Header = () => {
         <span className='Hamburger' onClick={MenuHandler}> <TbMenu/> </span>
       <div  className="brand"> 
     
-      <h1 className='fs-1'> DIRUMS  </h1>
+      <h1 className='fs-1'> TodosForTodo </h1>
        <sub className='com'> .com</sub>
         </div>
 
     <div className='ms-5'>
-      <span className='webdevelopment-text'>Website developement tracker </span>
+      <span className='webdevelopment-text'>Task tracker Application </span>
     </div>
      
     </header>
