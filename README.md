@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Todo List - React JS⭐
+A responsive and interactive Todo List app with drag-and-drop functionality and CRUD operations. This app is built using React, Bootstrap, React Bootstrap, and Material-UI.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App Screenshot 📷
+![image](https://github.com/NishantMsingh/dirums/assets/93445529/6e56e141-21c7-4239-87cd-40a9471c1793)
 
-## Available Scripts
+## Live Demo
+You can access the live demo of the app on Vercel.
+https://dirums-pi.vercel.app/
 
-In the project directory, you can run:
+## Features 🚀🚀
+Drag-and-drop functionality using react-beautiful-dnd.
+Create, update, and delete tasks.
+Responsive design for various screen sizes.
+Stylish UI with the use of Bootstrap and Material-UI.
 
-### `npm start`
+## Technologies Used 🚀🚀
+React
+Bootstrap
+React Bootstrap
+Material-UI
+react-beautiful-dnd for drag-and-drop functionality
+## Setup and Installation🚀🚀
+Clone this repository: git clone https://github.com/your-username/your-project.git.
+Navigate to the project directory: cd your-project.
+Install dependencies: npm install.
+Run the app: npm start.
+## Usage
+Add tasks by entering a description and due date.
+Drag and drop tasks to different sections: To Do, In Progress, Completed.
+Edit tasks by clicking on them and making changes in the modal.
+Delete tasks by clicking the delete button.
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any improvements or bug fixes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+License
+This project is licensed under the MIT License.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Licennce
 
-### `npm test`
+Add badges from somewhere like: [shields.io](https://shields.io/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Nishant
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [@nishantsinghrajput](https://github.com/NishantMsingh) 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Documentation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[Documentation](https://linktodocumentation)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+NA
+## Demo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://dirums-pi.vercel.app/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Feedback
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you have any feedback, please reach out to us at nishantkumarsingh16019@gmail.com
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
