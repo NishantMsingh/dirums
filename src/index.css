@@ -40,7 +40,8 @@ textarea{
   textarea{
     border:none;
     outline: none;
-    width: 80%;
+    width:95%;
+    margin-right: 10px;
     background-color: rgba(170, 170, 170, 0.151);
   }
  }
