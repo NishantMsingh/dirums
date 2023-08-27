@@ -37,4 +37,10 @@ textarea{
   .none{
     display: none !important;
   }
+  textarea{
+    border:none;
+    outline: none;
+    width: 80%;
+    background-color: rgba(170, 170, 170, 0.151);
+  }
  }

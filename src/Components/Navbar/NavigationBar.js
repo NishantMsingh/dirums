@@ -140,9 +140,9 @@ const NavigationBar = () => {
         <br />
 
         <textarea
-          className='rounded'
+          className='rounded '
           rows='6'
-          cols='50'
+          cols='30'
           name='description'
           placeholder='Feed the task guidelines and information'
           value={description}
